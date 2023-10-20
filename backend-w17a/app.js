@@ -4,11 +4,11 @@ const express = require('express')
 const databaseMiddleware = require('./middleware/database-middleware.js')
 const authRouter = require('./routes/auth-route.js')
 const transRouter = require('./routes/trans-route.js')
-
+// const cors = require('cors');
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+// app.use(cors())
 app.use(databaseMiddleware)
 
 app.get('/', (req, res) => {

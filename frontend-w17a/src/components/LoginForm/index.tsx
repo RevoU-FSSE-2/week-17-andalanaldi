@@ -29,14 +29,14 @@ const LoginForm = ({ onSubmit } : Props) => {
         <Card title={"Login Page"} bordered style={{ width: 350 }}>
             <form onSubmit={formMik.handleSubmit}>
                 <div>
-                    <Typography.Paragraph>{'Email'}</Typography.Paragraph>
-                    <Input name={'email'}
-                        value={formMik.values.email} 
-                        onChange={formMik.handleChange('email')}
-                        status={formMik.errors.email && 'error'}
+                    <Typography.Paragraph>{'Username'}</Typography.Paragraph>
+                    <Input name={'username'}
+                        value={formMik.values.username} 
+                        onChange={formMik.handleChange('username')}
+                        status={formMik.errors.username && 'error'}
                     />
-                    {formMik.errors.email && (
-                        <Typography.Paragraph>{formMik.errors.email}</Typography.Paragraph>
+                    {formMik.errors.username && (
+                        <Typography.Paragraph>{formMik.errors.username}</Typography.Paragraph>
                     )}
                 </div>
                 <div>

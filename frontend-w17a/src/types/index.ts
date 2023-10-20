@@ -20,7 +20,7 @@ export type CategoryForm = Omit<Category,'id'>
 // export type ProductForm = Omit<Product,'id'>
 
 export interface LoginForm {
-    email: string;
+    username: string;
     password: string;
 }
 
@@ -33,19 +33,22 @@ export interface LoginResponse {
 }
 
 export interface RegisForm {
-    name: string;
-    email   : string;
+    username: string;
     password: string;
 }
 
 export interface RegisResponse {
-    id: string;
-    name: string;
-    email: string;
-    password: string;
-    updated_at: string;
-    created_at: string;
+    message: string;
+    data: {
+        acknowledged: boolean;
+        insertedId: string; 
+    };
 }
+
+// export interface Regis {
+//     acknowledged: boolean;
+//     insertedId: string;
+// }
 
 interface token {
     token : string;
@@ -60,14 +63,49 @@ export const headers = {
 }
 
 export interface GetCategoryResponse {
+    message: string;
     data: Category[];
-    current_page: number;
-    total_item: number;
-    total_page: number;
 }
 
 export interface Category {
-    id: string | undefined;
-    name: string;
-    is_active: boolean;
+    _id: string | undefined;
+    username: string;
+    transfer: string;
+    nominal: number;
+    status: string
 }
+
+// export interface RegisForm {
+//     name: string;
+//     email   : string;
+//     password: string;
+// }
+
+// export interface RegisResponse {
+//     id: string;
+//     name: string;
+//     email: string;
+//     password: string;
+//     updated_at: string;
+//     created_at: string;
+// }
+
+// interface token {
+//     token : string;
+// }
+
+// export interface LoginResponse2 {
+//     data: token;
+//
+// export interface GetCategoryResponse {
+//     data: Category[];
+//     current_page: number;
+//     total_item: number;
+//     total_page: number;
+// }
+
+// export interface Category {
+//     id: string | undefined;
+//     name: string;
+//     is_active: boolean;
+// }

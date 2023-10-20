@@ -1,10 +1,12 @@
 import { LoginForm as LoginFormProps, LoginResponse2 } from "../../types"
 import { LoginForm } from "../../components"
+import { BASE_URL } from '../../config/config';
 
 const Login = () => {
 
     const onSubmit = async (data: LoginFormProps) => {
-        const fetching = await fetch('https://mock-api.arikmpt.com/api/user/login', {
+        const fetching = await fetch(`${BASE_URL}/auth/login`, {
+            //'https://mock-api.arikmpt.com/api/user/login'
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)

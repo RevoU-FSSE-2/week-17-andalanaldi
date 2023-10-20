@@ -1,17 +1,20 @@
 import { RegisForm as RegisFormProps, RegisResponse } from "../../types"
+//Regis
 import { RegisForm } from "../../components"
+import { BASE_URL } from '../../config/config';
 
 const Regis = () => {
 
     const onSubmit = async (data: RegisFormProps) => {
-        const fetching = await fetch('https://mock-api.arikmpt.com/api/user/register', {
+        const fetching = await fetch(`${BASE_URL}/auth/register`, {
+            //'https://mock-api.arikmpt.com/api/user/register'
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         })
         const response: RegisResponse = await fetching.json()
         if(response) {
-            localStorage.setItem('name', response.name)
+            localStorage.setItem('insertedId', response.data.insertedId)
             window.location.replace('/login')
         }
     }

@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const { JWT_SIGN } = require('../config/jwt.js')
 
 const register = async (req, res) => {
-  const { username, password, role } = req.body
+  const { username, password } = req.body
 
   try {
       if (!username.trim()) {
