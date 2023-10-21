@@ -25,9 +25,9 @@ app.use((err, req, res, next) => {
     })
   })
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000')
-})
+// app.listen(3000, () => {
+//     console.log('Server is running on port 3000')
+// })
 
 //Create connection with cloud database (MongoDB Atlas)
 let URI = "mongodb://mongo:FgDqfDDrZMzoG0W7Hs3S@containers-us-west-80.railway.app:7642"
