@@ -36,6 +36,11 @@ const login = async (req, res) => {
     const { username, password } = req.body
     const user = await req.db.collection('users').findOne({ username })
     console.log(user, '<=== user ===>');
+
+    if (!user) {
+      return res.status(400).json({ error: 'User not found' });
+    }
+
     const isPasswordCorrect = await bcrypt.compare(password, user.password) 
     
     if (isPasswordCorrect) {
